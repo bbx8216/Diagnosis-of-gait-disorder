@@ -119,6 +119,7 @@ def extract_keypoint(path, normalize_extraction = True, real_extraction = False,
                     
     cv2.destroyAllWindows()
     cap.release()
+    
     if(save_path != None and save_file_name != None):
         #Normalize only
         if(normalize_extraction == True and real_extraction == False):
@@ -143,6 +144,22 @@ def extract_keypoint(path, normalize_extraction = True, real_extraction = False,
             point_normalize_dataframe.to_csv(save_path + save_file_name + "_noramlize.csv", index = False)
             point_real_dataframe.to_csv(save_path + save_file_name + "_real.csv", index= False)
             return point_normalize_dataframe, point_real_dataframe
+        
+    else:
+        #Normalize only
+        if(normalize_extraction == True and real_extraction == False):
+            point_normalize_dataframe = pd.DataFrame(columns = landmark_list, data = results_normalize_points)
+            return point_normalize_dataframe
+        #real only
+        elif(normalize_extraction == False and real_extraction == True):
+            point_real_dataframe = pd.DataFrame(columns = landmark_list, data = results_real_points)
+            return point_real_dataframe
+    
+        elif(normalize_extraction == True and real_extraction == True):
+            point_normalize_dataframe = pd.DataFrame(columns = landmark_list, data = results_normalize_points)
+            point_real_dataframe = pd.DataFrame(columns = landmark_list, data = results_real_points)
+            return point_normalize_dataframe, point_real_dataframe
+
 
 
 # In[ ]:
@@ -182,12 +199,10 @@ def compute_len_feature(dataframe = None, path = None,
         'left_foot_index', 'right_foot_index',
     ]
     
-    if(dataframe == None and path == None):
-        return None
     
-    else:
-        if(dataframe == None):
-            dataframe = pd.read_csv(path)
+
+    if(path != None):
+        dataframe = pd.read_csv(path)
             
     if(drop_na == True):
         dataframe.dropna(axis = 0)
@@ -214,6 +229,8 @@ def compute_len_feature(dataframe = None, path = None,
         if not os.path.isdir(save_path):
             os.makedirs(save_path)
         result.to_csv(save_path + save_file_name + "_len_feauture.csv", index = False)
+        return result
+    else:
         return result
 
 # In[ ]:
@@ -253,12 +270,9 @@ def compute_diff_feature(dataframe = None, path = None,
         'left_foot_index', 'right_foot_index',
     ]
     
-    if(dataframe == None and path == None):
-        return None
     
-    else:
-        if(dataframe == None):
-            dataframe = pd.read_csv(path)
+    if(path != None):
+        dataframe = pd.read_csv(path)
             
     if(drop_na == True):
         dataframe.dropna(axis = 0)
@@ -286,6 +300,8 @@ def compute_diff_feature(dataframe = None, path = None,
         if not os.path.isdir(save_path):
             os.makedirs(save_path)
         result.to_csv(save_path + save_file_name + "_diff_feauture.csv", index = False)
+        return result
+    else:
         return result
 
 # In[ ]:
@@ -343,12 +359,9 @@ def compute_angle_feature(dataframe = None, path = None, drop_na = True, data_ab
         'left_foot_index', 'right_foot_index',
     ]
     
-    if(dataframe == None and path == None):
-        return None
-    
-    else:
-        if(dataframe == None):
-            dataframe = pd.read_csv(path)
+
+    if(path != None):
+        dataframe = pd.read_csv(path)
             
     if(drop_na == True):
         dataframe.dropna(axis = 0)
@@ -388,9 +401,14 @@ def compute_angle_feature(dataframe = None, path = None, drop_na = True, data_ab
             
     if(data_abs == True):
         result = np.abs(result)
-            
-    result.to_csv(save_path + save_file_name + "_angle_feauture.csv", index = False)
-    return result
+    
+    if(save_path != None and save_file_name != None):
+        if not os.path.isdir(save_path):
+            os.makedirs(save_path)
+        result.to_csv(save_path + save_file_name + "_angle_feauture.csv", index = False)
+        return result
+    else:
+        return result
         
 
         
