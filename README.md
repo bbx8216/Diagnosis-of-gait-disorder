@@ -20,8 +20,11 @@
 
 Before running this program, **please create a virtual environment by running the code below for a better execution environment.** 
 
-```python
+```
 $ git clone https://github.com/CUAI-CAU/2022_Summer_CV5.git
+```
+
+```python
 $ conda create -n Gait_Classifier python=3.8
 $ conda activate  Gait_Classifier
 $ pip install -r requirements.txt
