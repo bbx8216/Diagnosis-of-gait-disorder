@@ -33,6 +33,6 @@ This code was tested with `python 3.8.13`, `pycaret 1.9.0`, `mediapipe 0.8.10.1`
 
 ## How to Use
 
-**Please Check Gait_Classification_Demo**
+Please Check [Gait_Classification_Demo](https://github.com/CUAI-CAU/2022_Summer_CV5/blob/main/Gait_Classfication_Demo.ipynb)
 
 
