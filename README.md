@@ -1,6 +1,6 @@
-# Diagnosis of gait disorder by Human pose estiamtion [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FCUAI-CAU%2F2022_Summer_CV5&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
+# Diagnosis of gait disorder by Human pose estimation [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FCUAI-CAU%2F2022_Summer_CV5&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
-[Paper]() | [Poster]() | [Project]() | [Presentation]() | [Demo](https://github.com/CUAI-CAU/2022_Summer_CV5/blob/main/Gait_Classfication_Demo.ipynb)
+[Paper](https://drive.google.com/drive/folders/1kXl11ZZQ-4_ttjo9KTI3fasornmFJuvt) | [Poster]() | [Project]() | [Presentation]() | [Demo](https://github.com/CUAI-CAU/2022_Summer_CV5/blob/main/Gait_Classfication_Demo.ipynb)
 
 ## Our Team
 - TaeYun Kim (💻 School of Computer Science & Engineering, Chung-Ang Univ.)
